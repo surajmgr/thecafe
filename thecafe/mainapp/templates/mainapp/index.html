@@ -1,0 +1,234 @@
+{% load static %}
+{% for l in ainfo.all %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="title" content="The Hungry Eye Cafe | Sindhuli, Nepal">
+    <meta property="og:image" content="https://i.ibb.co/HqTymp7/theclogo.jpg">
+    <meta name="description" content="{{l.about}}">
+    <meta name="language" content="English">
+    <meta name="keywords" content="The Hungry Eye Cafe, Cafe, restaurant, coffee, nepali restaurant">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="KamaSystems">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel='icon' href='https://i.ibb.co/HqTymp7/theclogo.jpg' type='image/x-icon' />
+
+    <title>The Hungry Eye Cafe | Sindhuli, Nepal</title>
+
+    <link rel="stylesheet" href="{% static 'Assets/style.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn|Sanchez&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e45a0e2548.js" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <a id="button"></a>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <a class="logo" href="">
+                    <!-- <img class="logo" src="http://pluspng.com/img-png/burger-king-logo-png--500.png" -->
+                    <!-- alt="The Hungry Cafee" aria-placeholder="The Hungry Cafee"> -->
+                    The Hungry Eye Cafe
+                </a>
+                <!-- <a class="fb" href=""><i class="fas fa-bars"></i></a> -->
+                <nav>
+                    <ul class="topnav" id="myTopnav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="#Menu">Menu</a></li>
+                        <li><a href="#Direction">Direction</a></li>
+                        <li class="fnd"><a href="#Contact">Contact</a></li>
+                        <li class="fnd"><a href="#About">About Us</a></li>
+                        <!-- <li class="drb"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                <i class="fa fa-bars"></i>
+                            </a></li> -->
+                    </ul>
+                </nav>
+            </div>
+            <a href="/" class="tlogo">THE HUNGRY EYE</a>
+        </div>
+        <div class="title">
+            <!-- <a id="simple_arc">SOLID, HONEST</a><br> -->
+            <img class="sh" src="{% static 'Assets/sh.png' %}" alt="">
+            <a class="nl" style="font-size: 30px; font-weight: bold;">&#8213;</a>
+            <a class="nl" style="font-size: 15px;">&</a>
+            <a class="nl" style="font-size: 30px; font-weight: bold;">&#8213;</a>
+            <br>
+            <a class="nl">SIMPLE</a><br><br>
+            <a class="ul">PROPER FOOD</a><br><br><br>
+            <br>
+            <button onclick="location.href='tel:+977{{l.phone}}'" type="button" class="btn">ORDER NOW</button>
+            <br>
+
+        </div>
+        <a href="#About"><i class="fr fas fa-arrow-down"></i></a>
+    </header>
+
+    <main id="Aboutd">
+        <div id="About" class="About">
+            <h1>ABOUT</h1>
+            <!-- <hr align="center" class="abt"> -->
+            <h4>{{l.about}}
+            </h4>
+        </div>
+        <!-- Today Special slider -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% for i in acarousel.all %}
+                <li data-target="#myCarousel" data-slide-to="{{i.number}}" class="active"></li>
+                {% endfor %}
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                {% for i in acarousel.all %}
+                <div class="item {{i.state}}">
+                    <img src="{{i.image}}" alt="Chania">
+                    <div class="carousel-caption">
+                        <h3>{{i.name}}</h3>
+                        <p>{{i.sdesc}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- End TSS -->
+        <!-- Menu -->
+        <div id="Menu" class="Menu">
+            <div class="container">
+                <h1>MENU</h1>
+                <div class="row">
+                    <div class="col-6 l">
+                        <h3>Breakfast</h3>
+                        <h4>Sandwich</h4>
+                        <h3>Khaja Set</h3>
+                        <h4>Chicken, Veg, Buff</h4>
+                        <h3>Thakali Khana</h3>
+                        <h4>Sada, Chicken, Mutton</h4>
+                        <h3>Pizza</h3>
+                        <h4>Chicken, Veg, Cheese, Classic</h4>
+                        <h3>Burger</h3>
+                        <h4>Chicken, Veg, Cheese, Ham</h4>
+                        <h3>Momo</h3>
+                        <h4>Chicken Chilly, Buff Chilly, Momo Sadeko</h4>
+                        <h3>Sukuti</h3>
+                        <h4>Sukuti fry, Sukuti Sadeko</h4>
+                        <h3>Soft Drinks</h3>
+                        <h4>Coffee, Chocolate Shake</h4>
+                        <h3>Hard Drinks</h3>
+                        <h4>Beer, Wine, Vodka, Rum</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Menu -->
+        <!-- Hours & Orders & Reserve -->
+        <div id="Contact" class="Ordl">
+            <h1>HOURS</h1>
+            <!-- <hr align="center" class="abt"> -->
+            <h4>Sunday - Tuesday: 3am to 11pm</h4>
+            <h4>
+                Wednesday - Thursday: 3am to 11pm
+            </h4>
+            <h4>
+                Friday - Saturday: 2am to 11pm
+            </h4>
+
+            <div class="cnt" itemscope itemtype="https://schema.org/LocalBusiness">
+                <h1 class="evn" itemprop="name">Contact</h1>
+                <h4> Phone: <span itemprop="telephone"><a href="tel:+977{{l.phone}}">
+                            {{l.phone}}</a></span></h4>
+                <h4> Email: <a href="mailto:thehungryeyecafe@gmail.com">
+                        thehungryeyecafe@gmail.com</a></span></h4>
+                <br>
+                <h4><a href="https://www.facebook.com/The-hungry-eye-cafe-103421171068697/"><i
+                            class="fab fa-facebook-f"></i></a></h4>
+            </div>
+
+
+            <h1 class="evn">PRIVATE EVENTS</h1>
+            <h4>The Hungry Eye Cafe provides the service of organizing private events or booking the lounge and table
+                too.</h4>
+            <button onclick="location.href='tel:+977{{l.phone}}'" type="button" class="btn">INQUIRE NOW</button>
+        </div>
+        <!-- map -->
+        <div id="Direction" class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="{{l.link}}" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                    href="https://www.online-timer.net">online-timer.net</a></div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 100%;
+                }
+
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <!-- <p class="float-right"><a href="#">Back to top</a></p> -->
+                <p>&copy; {% now "Y" %} The Hungry Eye Cafe, Pvt. <a href="kamasystems.pythonanywhere.com"> Powered by
+                        KamaSystems</a>
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+
+    </script>
+</body>
+
+</html>
+{% endfor %}
